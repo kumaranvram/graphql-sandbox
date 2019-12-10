@@ -2,8 +2,10 @@ module Types
     class UserType < BaseObject
       field :id, ID, null: false
       field :name, String, null: false
-      # we are exposing `email` just for tutorial purposes
-      # in real application shouldn't leak user emails
+      
+      # Don't leak user emails. FOR DEMO PURPOSES ONLY
+      
       field :email, String, null: false
+      field :votes, [Types::VoteType], null: false
     end
   end
